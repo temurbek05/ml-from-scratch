@@ -124,7 +124,7 @@ Ridge on the same data (slopes shrink; the intercept moves toward $\bar y = 2.78
 | 100 | $(2.9228,\; 1.2986,\; -0.6374)$ | 1.447 |
 | 1000 | $(2.8143,\; 0.3137,\; -0.1518)$ | 0.349 |
 
-Here the features are not exactly centered ($\bar x = (-0.098,\; 0.025)$), so $w_0$ is not fixed at $\bar y$: it follows $w_0 = \bar y - \bar x^\top w_{1:}$ exactly (checked: the two sides agree to all printed digits for every $\lambda$) and drifts toward $\bar y$ as the slopes shrink. With centered features $w_0 = \bar y$ for every $\lambda$, which is what the test checks.
+Here the features are not exactly centered: the mean of the features is $\bar x = (-0.098, 0.025)$, so $w_0$ is not fixed at $\bar y$: it follows $w_0 = \bar y - \bar x^\top w_{1:}$ exactly (checked: the two sides agree to all printed digits for every $\lambda$) and drifts toward $\bar y$ as the slopes shrink. With centered features $w_0 = \bar y$ for every $\lambda$, which is what the test checks.
 
 ## Notes
 

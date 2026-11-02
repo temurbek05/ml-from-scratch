@@ -81,11 +81,11 @@ $$\text{MSE}(k) = \frac{1}{n d} \sum_{i > k} \sigma_i^2 = \frac{n-1}{n d} \sum_{
 Consequences:
 - It **decreases** with $k$: going from $k$ to $k+1$ removes the term $\sigma_{k+1}^2 / (nd)$, which is strictly positive whenever $\sigma_{k+1} > 0$. That is exactly `test_reconstruction_error_decreases_with_k`.
 - It is **zero at $k = \operatorname{rank}(X_c)$** (up to rounding), which is `test_full_rank_reconstruction_is_exact`.
-- By the Eckart–Young theorem (quoted, not proved here), no other rank-$k$ approximation of $X_c$ has a smaller Frobenius error. The error is large when the spectrum decays slowly and small when a few directions carry most of the variance.
+- By the Eckart–Young theorem (quoted, not proved here), no other approximation of $X_c$ with rank $k$ has a smaller Frobenius error. The error is large when the spectrum decays slowly and small when a few directions carry most of the variance.
 
 ## Numerical checks (all run against the implementation)
 
-Data: the test recipe, $n = 500$, $d = 4$, seed 0 (true scales $5, 3, 1, 0.5$, rotated, with mean $(1, -2, 0.5, 3)$). Singular values of $X_c$: $114.13,\ 62.85,\ 22.72,\ 11.37$, so $\lambda \approx 26.10,\ 7.92,\ 1.03,\ 0.26$.
+Data: the test recipe with $n = 500$, $d = 4$ and seed 0. The true scales are $5, 3, 1, 0.5$ (rotated) and the mean is $(1, -2, 0.5, 3)$. Singular values of $X_c$: $114.13,\ 62.85,\ 22.72,\ 11.37$, so $\lambda \approx 26.10,\ 7.92,\ 1.03,\ 0.26$.
 
 | Check | Result |
 |---|---|

@@ -58,7 +58,7 @@ which is positive semi-definite: $L$ is convex and a point with zero gradient is
 
 ## 3. Numerical stability
 
-**Sigmoid.** The textbook formula $1 / (1 + e^{-z})$ evaluates $e^{-z}$, which is $e^{1000}$ for $z = -1000$. That exceeds the largest float64 (about $1.8 \cdot 10^{308}$), so NumPy returns `inf` and raises an `overflow` warning. In this particular formula the final value is still right ($1/\infty = 0$), but the overflow flag is raised; `test_sigmoid_is_numerically_stable` turns it into an error. Other algebraically equal forms are worse: $e^z / (1 + e^z)$ at $z = +1000$ computes $\infty / \infty = $ `nan`.
+**Sigmoid.** The textbook formula $1 / (1 + e^{-z})$ evaluates $e^{-z}$, which is $e^{1000}$ for $z = -1000$. That exceeds the largest float64 (about $1.8 \cdot 10^{308}$), so NumPy returns `inf` and raises an `overflow` warning. In this particular formula the final value is still right ($1/\infty = 0$), but the overflow flag is raised; `test_sigmoid_is_numerically_stable` turns it into an error. Other algebraically equal forms are worse: $e^z / (1 + e^z)$ at $z = +1000$ computes $\infty / \infty$, which is `nan`.
 
 The stable version never exponentiates a positive number. For $z \ge 0$ use $\sigma(z) = \dfrac{1}{1 + e^{-z}}$; for $z < 0$ multiply top and bottom by $e^{z}$:
 
