@@ -10,6 +10,7 @@ This project was written with AI assistance. Be clear about who did what:
 - **AI assistant (Claude):** the function stubs and the 17 tests (provided together as the initial scaffold, in a single session), then the implementations in `mlscratch/`, the derivations in `docs/`, the comparison notebook and this README. The derivations were checked numerically against the code (gradient vs finite differences, gradient descent vs closed form, and so on); the checks are listed at the end of each doc.
 - **Repository owner (Yuldoshev Temurbek):** set the goals and directed the work, made the decisions, created the GitHub account and repository. The code and text in this repository were not written by hand by the owner.
 - The tests in `tests/` were not edited to make the code pass.
+- **Time frame:** the scaffold, implementations, derivations, notebook and this README were produced in AI-assisted working sessions on 2026-11-02 and 2026-11-03, so the commit history is short. It is not the record of a multi-week project.
 
 ## Results
 All numbers are produced by `notebooks/compare-with-sklearn.ipynb` (Windows, Python 3.13.5, NumPy 2.4.4, scikit-learn 1.9.1). Comparisons are on the full datasets: they check that the implementations agree, not how well the models generalize.
